@@ -11,7 +11,6 @@
         font-family: "Syne", sans-serif;
         margin: 0;
         padding: 0;
-        background-color: white;
     }
     h1 {
         margin-top: 20px;
@@ -96,11 +95,13 @@
 <script>
     var button = document.getElementById("colorButton");
     var hexp = document.getElementById("hex");
+    var body = document.querySelector("body");
 
     button.addEventListener("click", function() {
         var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
         button.style.backgroundColor = randomColor;
         hexp.innerText = randomColor;
+        body.style.backgroundColor = randomColor
         // alert("hello");
     });
     button.addEventListener("hover", function() {
