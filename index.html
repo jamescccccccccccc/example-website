@@ -59,6 +59,9 @@
     #hex {
         font-size: 50px;
     }
+    #colorname {
+        font-size: 50px;
+    }
     #head{
         background-color: #fff;
         border-radius: 30px;
@@ -100,16 +103,22 @@
     <!-- <img class="img" src="photo.jpg" alt="Placeholder Image"> -->
     <p id="yourcolor">Color Chosen</p>
     <p id="hex"></p>
+    <p id="colorname"></p>
 </center>
+<script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
 <script>
     var button = document.getElementById("colorButton");
     var hexp = document.getElementById("hex");
     var body = document.querySelector("body");
+    var colorname = document.getElementById("colorname");
 
     button.addEventListener("click", function() {
         var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
         hexp.innerText = randomColor;
         body.style.backgroundColor = randomColor
+        var n_match = ntc.name(randomColor);
+        n_name = n_match[1]; // Text string: Color name
+        colorname.innerText = n_name;
         // alert("hello");
     });
     button.addEventListener("hover", function() {
