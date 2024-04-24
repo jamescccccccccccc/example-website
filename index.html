@@ -78,9 +78,11 @@
 </style>
 </head>
 <body>
+    <center>
     <div id="head">
         <h1 id="headh1">Welcome to my Website</h1>
     </div>
+</center>
     <div class="container">
         <p>This is a simple HTML page with headers, paragraphs, and CSS styling.</p>
     </div>
@@ -100,7 +102,6 @@
 
     button.addEventListener("click", function() {
         var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-        button.style.backgroundColor = randomColor;
         hexp.innerText = randomColor;
         body.style.backgroundColor = randomColor
         // alert("hello");
